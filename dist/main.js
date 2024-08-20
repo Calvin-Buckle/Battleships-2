@@ -10,13 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/boards.js":
+/*!***********************!*\
+  !*** ./src/boards.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   createEnemyBoard: () => (/* binding */ createEnemyBoard),\n/* harmony export */   createPlayerBoard: () => (/* binding */ createPlayerBoard)\n/* harmony export */ });\nfunction createPlayerBoard(){\n    let playerBoard = document.getElementById('player-board');\n    for(let i = 0; i < 100; i++){\n        const cell = document.createElement('div');\n        cell.className = 'cell';\n        cell.id = `playerCell${i}`;\n        playerBoard.appendChild(cell);\n    }\n}\n\nfunction createEnemyBoard(){\n    let enemyBoard = document.getElementById('enemy-board');\n    for(let i = 0; i < 100; i++){\n        const cell = document.createElement('div');\n        cell.className = 'cell';\n        cell.id = `enemyCell${i}`;\n        enemyBoard.appendChild(cell); \n    }\n}\n\n\n\n\n//# sourceURL=webpack://battleship-2/./src/boards.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ships__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ships */ \"./src/ships.js\");\n// import hier\n\n\nlet ship1 = new _ships__WEBPACK_IMPORTED_MODULE_0__[\"default\"](4,0,false)\n\nconsole.log(ship1)\n\n//# sourceURL=webpack://battleship-2/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ships__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ships */ \"./src/ships.js\");\n/* harmony import */ var _boards__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./boards */ \"./src/boards.js\");\n\n\n\n\n(0,_boards__WEBPACK_IMPORTED_MODULE_1__.createEnemyBoard)()\n;(0,_boards__WEBPACK_IMPORTED_MODULE_1__.createPlayerBoard)()\n\n//# sourceURL=webpack://battleship-2/./src/index.js?");
 
 /***/ }),
 
