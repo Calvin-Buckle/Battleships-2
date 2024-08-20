@@ -20,13 +20,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/game.js":
+/*!*********************!*\
+  !*** ./src/game.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _ships__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ships */ \"./src/ships.js\");\n\n\nfunction runGame() {\n    // Initialize ship objects\n    const ship1 = new _ships__WEBPACK_IMPORTED_MODULE_0__[\"default\"](1, 0, false);\n    const ship2 = new _ships__WEBPACK_IMPORTED_MODULE_0__[\"default\"](2, 0, false);\n    const ship3 = new _ships__WEBPACK_IMPORTED_MODULE_0__[\"default\"](3, 0, false);\n    const ship4 = new _ships__WEBPACK_IMPORTED_MODULE_0__[\"default\"](4, 0, false);\n    const ship5 = new _ships__WEBPACK_IMPORTED_MODULE_0__[\"default\"](5, 0, false);\n\n    \n    const ships = document.getElementsByClassName('ships')\n\n    Array.from(ships).forEach(ship => {\n        ship.setAttribute('draggable', true)\n\n        ship.addEventListener('dragstart', (e) => {\n        e.dataTransfer.setData('text/plain', e.target.id);\n        setTimeout(() => {\n            ship.style.display = 'none'\n        }, 0)\n        });\n        ship.addEventListener('dragend', () => {\n            ship.style.display = 'block'\n        })\n    })\n    \n\n}\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (runGame);\n\n//# sourceURL=webpack://battleship-2/./src/game.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ships__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ships */ \"./src/ships.js\");\n/* harmony import */ var _boards__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./boards */ \"./src/boards.js\");\n\n\n\n\n(0,_boards__WEBPACK_IMPORTED_MODULE_1__.createEnemyBoard)()\n;(0,_boards__WEBPACK_IMPORTED_MODULE_1__.createPlayerBoard)()\n\n//# sourceURL=webpack://battleship-2/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ships__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ships */ \"./src/ships.js\");\n/* harmony import */ var _game__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./game */ \"./src/game.js\");\n/* harmony import */ var _boards__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./boards */ \"./src/boards.js\");\n\n\n\n\n(0,_game__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n(0,_boards__WEBPACK_IMPORTED_MODULE_2__.createEnemyBoard)();\n(0,_boards__WEBPACK_IMPORTED_MODULE_2__.createPlayerBoard)();\n\n\n\n//# sourceURL=webpack://battleship-2/./src/index.js?");
 
 /***/ }),
 
@@ -36,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _shi
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass Ship{\n    constructor(size, hits, isSunk){\n        this.size = size\n        this.hits = hits\n        this.isSunk = isSunk\n    }\n}\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Ship);\n\n//# sourceURL=webpack://battleship-2/./src/ships.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass Ship{\n    constructor(size, hits, isSunk){\n        this.size = size\n        this.hits = hits\n        this.isSunk = isSunk\n    }\n}\n\n\n\n\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Ship);\n\n//# sourceURL=webpack://battleship-2/./src/ships.js?");
 
 /***/ })
 
